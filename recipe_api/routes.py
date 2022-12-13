@@ -34,7 +34,6 @@ def get_recipe(id):
 def update_recipe(id):
     recipe = Recipe.query.get(id)
     recipe.name = request.json['name']
-    recipe.ingredients = request.json['ingredients']
     db.session.commit()
     return format_recipe(recipe)
 
