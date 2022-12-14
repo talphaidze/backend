@@ -8,13 +8,13 @@ class Recipe(db.Model):
     ingredients = db.Column(db.String(100), nullable = False)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     rating = db.Column(db.String(10), nullable=False, default=None)
-    favorite = db.Column(db.String(5), nullable=False, default=None)
+    favorite = db.Column(db.String(5), nullable=False, default=1)
 
     def __repr__(self):
         return '<Event %r>' % self.recipe_number
 
-    def __init__(self, name, ingredients):
+    def __init__(self, name, ingredients, rating, favorite):
         self.name = name
         self.ingredients = ingredients
-        self.rating = 1
-        self.favorite = "no"
+        self.rating = rating
+        self.favorite = favorite

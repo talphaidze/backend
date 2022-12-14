@@ -15,7 +15,9 @@ def skull():
 def create_account():
     name = request.json['name']
     ingredients = request.json['ingredients']
-    recipe = Recipe(name, ingredients)
+    rating = request.json['rating']
+    favorite = request.json['favorite']
+    recipe = Recipe(name, ingredients, rating, favorite)
     db.session.add(recipe)
     db.session.commit()
     return format_recipe(recipe)
@@ -34,6 +36,9 @@ def get_recipe(id):
 def update_recipe(id):
     recipe = Recipe.query.get(id)
     recipe.name = request.json['name']
+    recipe.ingredients = request.json['ingredients']
+    recipe.rating = request.json['rating']
+    recipe.favorite = request.json['favorite']
     db.session.commit()
     return format_recipe(recipe)
 
