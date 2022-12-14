@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'talphaidze-assignment-be'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AAB922053F5D4391AF739755D6FB82E4 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F98AB981BC0D4134B7B9EB6F26167604 }}
