@@ -7,10 +7,6 @@ from recipe_api.models import Recipe
 def hello_world():
     return 'Hello, World!'
 
-@app.route('/skull', methods=['GET'])
-def skull():
-    return 'Hi! This is the BACKEND SKULL! 💀'
-
 @app.route('/recipes', methods=['POST'])
 def create_account():
     name = request.json['name']
