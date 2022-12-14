@@ -7,9 +7,9 @@ def test_create_account():
     WHEN a new Account is created
     THEN check the name, account_number, balance, currency, status and created_at fields are defined correctly
     """
-    recipe = Recipe('Tiramisu', 'coffee', 'rating')
+    recipe = Recipe('Tiramisu', 'coffee', 'rating', 'favorite')
     assert recipe.name == 'Tiramisu'
     assert recipe.ingredients == 'coffee'
-    assert recipe.rating == '5'
-    assert recipe.favorte == 'Yes'
+    assert recipe.rating == 'rating'
+    assert recipe.favorite == 'favorite'
  
