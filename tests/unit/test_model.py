@@ -1,4 +1,4 @@
-from recipe_api.models import Account
+from recipe_api.models import Recipe
 import pytest
 
 def test_create_account():
@@ -7,9 +7,9 @@ def test_create_account():
     WHEN a new Account is created
     THEN check the name, account_number, balance, currency, status and created_at fields are defined correctly
     """
-    account = Account('John Doe', '€')
-    assert account.name == 'John Doe'
-    assert account.currency == '€'
-    assert account.account_number != None
-    assert account.balance == 0.0
-    assert account.status == 'Active'
+    recipe = Recipe('Tiramisu', 'coffee', 'rating')
+    assert recipe.name == 'Tiramisu'
+    assert recipe.ingredients == 'coffee'
+    assert recipe.rating == '5'
+    assert recipe.favorte == 'Yes'
+ 

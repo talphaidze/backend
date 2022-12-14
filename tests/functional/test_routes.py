@@ -26,7 +26,7 @@ def test_create_account(testing_client):
     WHEN the '/accounts' page is posted to (POST)
     THEN check the response is valid
     """
-    response = testing_client.post('/accounts', json={'name': 'John Doe', 'currency': '€'})
+    response = testing_client.post('/recipes', json={'name': 'tiramisu', 'ingredients': 'coffee', 'rating': '5', 'favorite': 'Yes'})
     assert response.status_code == 200
 
 
@@ -36,7 +36,7 @@ def test_update_account(testing_client):
     WHEN the '/accounts/<int:id>' page is updated (PUT)
     THEN check the response is valid
     """
-    response = testing_client.put('/accounts', json={'name': 'John Doe', 'currency': '€'})
+    response = testing_client.put('/recipes', json={'name': 'tiramisu', 'ingredients': 'coffee', 'rating': '5', 'favorite': 'Yes'})
     assert response.status_code == 200
 
 def test_delete_account(testing_client):
@@ -45,5 +45,5 @@ def test_delete_account(testing_client):
     WHEN the '/accounts/<int:id>' page is deleted (DELETE)
     THEN check the response is valid
     """
-    response = testing_client.delete('/accounts')
+    response = testing_client.delete('/recipes')
     assert response.status_code == 200
