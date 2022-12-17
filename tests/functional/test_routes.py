@@ -36,7 +36,7 @@ def test_update_recipe(testing_client):
     WHEN the '/recipes/<int:id>' page is updated (PUT)
     THEN check the response is valid
     """
-    response = testing_client.put('/recipes/<int:id>', json={'name': 'tiramisu', 'ingredients': 'coffee', 'rating': '5', 'favorite': 'Yes'})
+    response = testing_client.put('/recipes/1', json={'name': 'tiramisu', 'ingredients': 'coffee', 'rating': '5', 'favorite': 'Yes'})
     assert response.status_code == 200
 
 def test_delete_recipe(testing_client):
@@ -45,5 +45,5 @@ def test_delete_recipe(testing_client):
     WHEN the '/recipes/<int:id>' page is deleted (DELETE)
     THEN check the response is valid
     """
-    response = testing_client.delete('/recipes/<int:id>')
+    response = testing_client.delete('/recipes/1')
     assert response.status_code == 200
