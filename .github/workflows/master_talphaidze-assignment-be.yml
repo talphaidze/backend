@@ -4,12 +4,6 @@
 
 name: Build and deploy Python app to Azure Web App - talphaidze-assignment-be
 
-on:
-  push:
-    branches:
-      - master
-  workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
